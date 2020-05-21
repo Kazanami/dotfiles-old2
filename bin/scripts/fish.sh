@@ -1,5 +1,5 @@
 #!/bin/bash -xeu
-echo -n "Setup NeoVim..."
+echo -n "Setup fish shell..."
 sudo apt update > /dev/null 2>&1
 sudo apt install -y neovim 2>&1
 if [[ $? == "0" ]];then
@@ -8,6 +8,9 @@ else
 	echo "[ FAIL ]"
 	exit 33
 fi
+
+echo "Linking..."
+ln -s ${DOTFILES}/nvim ~/.config/
 
 echo "Downloading Plugin Manager..."
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
