@@ -21,10 +21,10 @@ jobs:
        working-directory: ./bin/scripts
        run: ${{matrix.script}}
 
-   init-test:
-     runs-on: ubuntu-latest
+  init-test:
+    runs-on: ubuntu-latest
      steps:
       - uses: actions/checkout@v2
       - name: initilze dotfiles test
         working-directory: ./bin
-        run: ./install.sh
+        run: bash -c ./install.sh
