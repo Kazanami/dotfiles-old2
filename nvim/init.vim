@@ -1,5 +1,5 @@
 if has("unix")
-	let plug_2_inst = "~/.config/nvim/plugins";
+	let plug_2_inst = "~/.config/nvim/plugins"
 elseif has("win64")
 	let plug_2_inst = "~/AppData/Local/nvim/plugins"
 endif
