@@ -29,7 +29,7 @@ else
 	exit 1
 fi
 
-if [[ -n -d "~/dotfiles" ]];then
+if [[ ! -d "~/dotfiles" ]];then
 	echo "Cloning Kazanami Dotfiles..."
 	git clone --recursive ${DOTFILES_GITHUB} "${DOTFILES_PATH}"
 fi
