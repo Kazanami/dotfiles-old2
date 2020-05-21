@@ -14,6 +14,5 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 if [[ -f "~/.config/nvim/autoload/plug.vim" ]];then
 	echo "Plugin Manager Installed"
-	nvim +slient +VimEnter +PlugInstall +qall
 	exit 0
 fi
