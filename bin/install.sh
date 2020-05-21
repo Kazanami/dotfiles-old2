@@ -42,3 +42,9 @@ echo "Installing adding Tools..."
 
 # Install fish
 ./scripts/fish.sh
+
+# Deploy
+./deploy.sh
+
+
+echo "Enjoy!"
