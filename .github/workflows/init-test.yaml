@@ -18,6 +18,6 @@ jobs:
     steps:
      - uses: actions/checkout@v2
      - name: unit-test of ${{matrix.script}}
-       working-directory: ./bin
+       working-directory: ./bin/scripts
        run: ${{matrix.script}}
 
