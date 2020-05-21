@@ -34,7 +34,7 @@ if [[ ! -d "~/dotfiles" ]];then
 	git clone --recursive ${DOTFILES_GITHUB} "${DOTFILES_PATH}"
 fi
 
-cd ${DOTFILES_PATH}
+cd ${DOTFILES_PATH}/bin
 
 echo "Installing adding Tools..."
 # Install neovim
