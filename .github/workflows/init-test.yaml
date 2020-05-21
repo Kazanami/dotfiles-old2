@@ -1,0 +1,23 @@
+name: "Init my script test"
+
+on:
+  push:
+   path:
+    - '.github/workflows/init-test.yml'
+    - 'bin/**'
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+     fail-fast: false
+     matrix:
+      script: ["./nvim.sh"]
+
+    steps:
+     - uses: actions/checkout@v2
+     - name: unit-test of ${{matrix.script}}
+       working-directory: ./bin
+       run: ${{matrix.script}}
+
