@@ -34,6 +34,7 @@ jobs:
       - name: initilize dotfiles test
         working-directory: ./bin
         run: |
+          apt install sudo
           ./install.sh
           bash -c "ls -lsa ~"
           bash -c "sudo apt install tree -y"
