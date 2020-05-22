@@ -1,5 +1,5 @@
-# Kazanami's dotfiles repository
-
+# Kazanami's dotfiles repository  
+![Init my script test](https://github.com/Kazanami/dotfiles/workflows/Init%20my%20script%20test/badge.svg) 
 ## How to install?
 ```
 curl -o - https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh | bash
@@ -9,6 +9,3 @@ curl -o - https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install
 ```
 .github/workflows/init-test.yaml
 ```
-| Test | Status | 
-| :---:         |     :---:      |
-| `.github/workflows/init-test.yml`     | ![Init my script test](https://github.com/Kazanami/dotfiles/workflows/Init%20my%20script%20test/badge.svg)       |
