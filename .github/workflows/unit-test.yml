@@ -27,7 +27,7 @@ jobs:
    steps:
      - name: Send trigger init test
        run: |
-          curl -X POST -H "Authorization: token ${{ secrets.GACTION_HOOKER }}" \
+          curl -X POST -H "Authorization: token ${{secrets.GITHUB_TOKEN}}" \
              -H "Content-Type: application/json" \
-             https://api.github.com/repos/Kazanami/dotfiles/deployments \
-             --data '{"ref": "master"}'
+             https://api.github.com/repos/Kazanami/dotfiles/dispatches \
+             --data '{"event_type":"run_init_test","client_payload":{"test":true}}'
