@@ -3,7 +3,7 @@ name: "Init my script test"
 on:
   push:
    paths:
-    - '.github/workflows/*.y?ml'
+    - '.github/workflows/**.y?ml'
     - 'bin/**'
 
 jobs:
