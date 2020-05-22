@@ -29,4 +29,5 @@ jobs:
         working-directory: ./bin
         run: |
           ./install.sh
-          bash -c "ls -lsa"
+          bash -c "ls -lsa ~"
+          bash -c "tree ~/dotfiles"
