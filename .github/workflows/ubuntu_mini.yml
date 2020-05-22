@@ -2,7 +2,7 @@ name: Ubuntu (Container)
 
 on:
   repository_dispatch:
-    types: ['init_test_on_ubuntu', 'single_test_cont']
+    types: ['init-test', 'single_test_ubuntu_mini']
 
 jobs:
   ubuntu-container:
