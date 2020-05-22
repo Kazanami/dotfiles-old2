@@ -4,6 +4,10 @@
 ```
 curl -o - https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh | bash
 ```
+or
+```
+wget -O - https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh | bash
+```
 
 ## Testing on GitHub Actions
 ```
