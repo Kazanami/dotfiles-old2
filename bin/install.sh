@@ -1,7 +1,7 @@
 #!/bin/bash -eu
 #cat dotfiles_logo.txt
 DOTFILES_GITHUB="https://github.com/Kazanami/dotfiles.git"
-DOTFILES_PATH="~/dotfiles"
+DOTFILES_PATH="${HOME}/dotfiles"
 dotfiles_logo='
 Welcome
             _       _    __ _ _
