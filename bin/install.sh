@@ -14,7 +14,7 @@ Welcome
 
   Licensed under the MIT license.
 '
-echo ${dotfiles_logo}
+printf ${dotfiles_logo}
 
 echo "Checking Package update...";
 sudo apt update > /dev/null 2>&1
