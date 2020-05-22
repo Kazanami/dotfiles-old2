@@ -1,0 +1,11 @@
+name: Ubuntu (no-container)
+
+on:
+  deployment:
+
+jobs:
+  ubuntu-vanilla:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+        curl -o - https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh | bash

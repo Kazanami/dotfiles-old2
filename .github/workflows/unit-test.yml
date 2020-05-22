@@ -1,0 +1,32 @@
+name: "Init my script test"
+
+on:
+  push:
+   paths:
+    - '.github/workflows/**.yml'
+    - 'bin/**'
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+     fail-fast: false
+     matrix:
+      script: ["./nvim.sh", "./fish.sh", "./nodebrew.sh"]
+
+    steps:
+     - uses: actions/checkout@v2
+     - name: unit-test of ${{matrix.script}}
+       working-directory: ./bin/scripts
+       run: bash -x ${{matrix.script}}
+
+ trigger_send:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Send trigger init test
+     run: |
+     curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
+             -H "Content-Type: application/json" \
+             https://api.github.com/repos/Kazanami/dotfiles/deployments \
+             --data '{"ref": "master"}'
