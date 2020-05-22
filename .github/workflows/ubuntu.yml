@@ -1,13 +1,9 @@
-name: Ubuntu-Vanilla
+name: Ubuntu Vanilla
 
 on:
   repository_dispatch:
-    types: [run_init_test]
-  issues:
-    type: opened
-  push:
-    branches: master
-
+    types: ['init_test_on_ubuntu_vanilla', 'single_test']
+    
 jobs:
   ubuntu-vanilla:
     runs-on: ubuntu-latest
@@ -16,10 +12,3 @@ jobs:
       - name: "Run dotfiles Install"
         run: |
          curl -o - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash
-  push-events:
-   runs-on: ubuntu-latest
-   if: github.event_name == 'push'
-   steps:
-    - name: Disable steps
-      run: exit 0
-      
