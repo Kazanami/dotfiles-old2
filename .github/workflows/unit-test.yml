@@ -1,4 +1,4 @@
-name: "Init my script test"
+name: "Unit Test"
 
 on:
   push:
