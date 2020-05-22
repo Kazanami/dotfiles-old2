@@ -32,7 +32,4 @@ jobs:
           ./install.sh
           bash -c "ls -lsa ~"
           bash -c "sudo apt install tree -y"
-          bash -c "tree ~/dotfiles"
-          bash -c "tree ~/.config"
-          bash -c "tree ~/.config/nvim"
-          bash -c "tree ~/.config/fish"
+          bash -c "tree -l ~"
