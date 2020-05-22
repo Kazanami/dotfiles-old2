@@ -34,8 +34,9 @@ jobs:
           bash -c "sudo apt install tree -y"
           bash -c "tree ~/dotfiles"
           bash -c "tree ~/.config"
+
       - name: nodebrew after install Test
-          needs: initilize dotfiles test
-          run: |
+        working-directory: ./bin
+        run: |
             chmod +x ./doctor.sh
             ./doctor.sh
