@@ -31,7 +31,7 @@ jobs:
        with:
          token: ${{ secrets.REPO_TOKEN }}
          repository: Kazanami/dotfiles
-         event-type: init_test_on_ubuntu
+         event-type: init-test
          client-payload: '{"ref": "${{ github.ref }}" , "sha": "${{ github.sha }}"}'
        #run: |
        #   curl -X POST -H "Authorization: token ${{secrets.REPO_TOKEN}}" \
