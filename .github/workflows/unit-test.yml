@@ -23,6 +23,7 @@ jobs:
 
   trigger_send:
    runs-on: ubuntu-latest
+   needs: "unit-test"
    steps:
      - name: Send trigger init test
        run: |
