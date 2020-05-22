@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: "Run dotfiles Install"
         run: |
-        wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash
+         wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash
