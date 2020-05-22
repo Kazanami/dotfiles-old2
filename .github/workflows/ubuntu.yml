@@ -2,7 +2,7 @@ name: Ubuntu Vanilla
 
 on:
   repository_dispatch:
-    types: ['init_test_on_ubuntu_vanilla', 'single_test']
+    types: ['init_test_on_ubuntu', 'single_test']
     
 jobs:
   ubuntu-vanilla:
