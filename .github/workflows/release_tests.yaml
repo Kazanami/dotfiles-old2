@@ -2,7 +2,7 @@ name: "Init my script test"
 
 on:
   push:
-   path:
+   paths:
     - '.github/workflows/init-test.yml'
     - 'bin/**'
 
@@ -34,9 +34,5 @@ jobs:
           bash -c "sudo apt install tree -y"
           bash -c "tree ~/dotfiles"
           bash -c "tree ~/.config"
-
-      - name: nodebrew after install Test
-        working-directory: ./bin
-        run: |
-            chmod +x ./doctor.sh
-            ./doctor.sh
+          bash -c "tree ~/.config/nvim"
+          bash -c "tree ~/.config/fish"
