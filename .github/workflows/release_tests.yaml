@@ -28,5 +28,5 @@ jobs:
       - name: initilize dotfiles test
         working-directory: ./bin
         run: |
-        ./install.sh
-        bash -c "ls -lsa"
+          ./install.sh
+          bash -c "ls -lsa"
