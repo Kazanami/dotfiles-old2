@@ -27,5 +27,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: initilize dotfiles test
         working-directory: ./bin
-        run: ./install.sh
-        run: bash -c "ls -lsa"
+        run: |
+        ./install.sh
+        bash -c "ls -lsa"
