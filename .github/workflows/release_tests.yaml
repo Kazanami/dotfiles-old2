@@ -20,6 +20,7 @@ jobs:
      - name: unit-test of ${{matrix.script}}
        working-directory: ./bin/scripts
        run: bash -x ${{matrix.script}}
+       
   init-test:
     runs-on: ubuntu-latest
     needs: "unit-test"
@@ -30,4 +31,5 @@ jobs:
         run: |
           ./install.sh
           bash -c "ls -lsa ~"
+          bash -c "sudo apt install tree -y"
           bash -c "tree ~/dotfiles"

@@ -19,6 +19,6 @@ ln -s ~/dotfiles/fish ~/.config/fish
 
 echo "Deploying bash config file..."
 mv ~/.bashrc ~/.bashrc.bak
-ln -s ~/dotfiles/.bashrc ~/.bashrc
+ln -s ~/dotfiles/bash/.bashrc ~/.bashrc
 
 echo "Complited!"
