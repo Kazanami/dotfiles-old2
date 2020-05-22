@@ -7,7 +7,9 @@ endif
 call plug#begin(plug_2_inst)
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-runtime! nvim_options.vim
-runtime! lightline_options.vim
+runtime! ./conf/nvim_options.vim
+runtime! ./conf/lightline_options.vim
