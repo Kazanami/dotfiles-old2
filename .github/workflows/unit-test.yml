@@ -3,8 +3,9 @@ name: "Init my script test"
 on:
   push:
    paths:
-    - '.github/workflows/**.yml'
+    - '.github/workflows/unit-test.yml'
     - 'bin/**'
+
 
 jobs:
   unit-test:
@@ -21,7 +22,7 @@ jobs:
        working-directory: ./bin/scripts
        run: bash -x ${{matrix.script}}
 
-  trigger_send:
+  trigger-send:
    runs-on: ubuntu-latest
    needs: "unit-test"
    steps:
@@ -30,7 +31,7 @@ jobs:
        with:
          token: ${{ secrets.REPO_TOKEN }}
          repository: Kazanami/dotfiles
-         event-type: run_init_test
+         event-type: init_test_on_ubuntu_vanilla
          client-payload: '{"ref": "${{ github.ref }}" , "sha": "${{ github.sha }}"}'
        #run: |
        #   curl -X POST -H "Authorization: token ${{secrets.REPO_TOKEN}}" \
