@@ -3,10 +3,13 @@ name: Ubuntu (no-container)
 on:
   repository_dispatch:
     types: [run_init_test]
+  issues:
+    type: opened
 
 jobs:
   ubuntu-vanilla:
     runs-on: ubuntu-latest
+    if: github.event_name == 'repository_dispatch'
     steps:
       - name: "Run dotfiles Install"
         run: |
