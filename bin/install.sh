@@ -43,6 +43,9 @@ echo "Installing adding Tools..."
 # Install fish
 ./scripts/fish.sh
 
+# Install Nodebrew
+./scripts/nodebrew.sh
+
 # Deploy
 ./deploy.sh
 

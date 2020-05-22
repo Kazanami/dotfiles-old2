@@ -1,8 +1,7 @@
 #!/bin/bash -ue
 
 echo "Deploying nVim config files..."
-mkdir -p ~/.config/nvim
-ln -s ~/dotfiles/nvim ~/.config/nvim
+ln -s ~/dotfiles/nvim ~/.config/
 
 echo "Downloading nVim Plugin Manager..."
 
@@ -20,5 +19,8 @@ ln -s ~/dotfiles/fish ~/.config/fish
 echo "Deploying bash config file..."
 mv ~/.bashrc ~/.bashrc.bak
 ln -s ~/dotfiles/bash/.bashrc ~/.bashrc
+
+echo "Reloading bash config..."
+source $HOME/.bashrc
 
 echo "Complited!"
