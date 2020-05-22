@@ -14,13 +14,13 @@ Welcome
 
   Licensed under the MIT license.
 '
-echo "${dotfiles_logo}"
+echo ${dotfiles_logo}
 
 echo "Checking Package update...";
-sudo apt update
+sudo apt update > /dev/null 2>&1
 
 echo "Install the Required Packages..."
-sudo apt install git curl
+sudo apt install git curl > /dev/null 2>&1
 
 if [[ $? == "0" ]];then
 	echo "Complited."
