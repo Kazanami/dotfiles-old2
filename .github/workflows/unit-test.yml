@@ -21,12 +21,12 @@ jobs:
        working-directory: ./bin/scripts
        run: bash -x ${{matrix.script}}
 
- trigger_send:
+  trigger_send:
    runs-on: ubuntu-latest
    steps:
      - name: Send trigger init test
-     run: |
-     curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
+       run: |
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              -H "Content-Type: application/json" \
              https://api.github.com/repos/Kazanami/dotfiles/deployments \
              --data '{"ref": "master"}'
