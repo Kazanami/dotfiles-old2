@@ -5,11 +5,12 @@ on:
     types: ['init_test_on_ubuntu', 'single_test_cont']
 
 jobs:
-  ubuntu-vanilla:
+  ubuntu-container:
     runs-on: ubuntu-latest
     container: "ubuntu:latest"
     if: github.event_name == 'repository_dispatch'
     steps:
       - name: "Run dotfiles Install"
         run: |
+         apt update && apt install -y wget
          wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash
