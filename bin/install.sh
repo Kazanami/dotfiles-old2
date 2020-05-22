@@ -38,16 +38,16 @@ cd ${DOTFILES_PATH}/bin
 
 echo "Installing adding Tools..."
 # Install neovim
-./scripts/nvim.sh
+bash ./scripts/nvim.sh
 
 # Install fish
-./scripts/fish.sh
+bash ./scripts/fish.sh
 
 # Install Nodebrew
-./scripts/nodebrew.sh
+bash ./scripts/nodebrew.sh
 
 # Deploy
-./deploy.sh
+bash ./deploy.sh
 
 
 echo "Enjoy!"
