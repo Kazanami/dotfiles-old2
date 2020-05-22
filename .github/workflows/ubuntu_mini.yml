@@ -13,4 +13,4 @@ jobs:
       - name: "Run dotfiles Install"
         run: |
          apt update && apt install -y wget
-         wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash
+         wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash -x
