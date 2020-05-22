@@ -1,4 +1,4 @@
-#!/bin/bash -xeu
+#!/bin/bash -eu
 echo -n "Setup fish shell..."
 sudo apt-add-repository -y ppa:fish-shell/release-3
 sudo apt update > /dev/null 2>&1

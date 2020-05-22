@@ -1,4 +1,4 @@
-#!/bin/bash -xue
+#!/bin/bash -ue
 
 echo "Deploying nVim config files..."
 mkdir -p ~/.config/nvim
@@ -22,4 +22,3 @@ mv ~/.bashrc ~/.bashrc.bak
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 
 echo "Complited!"
-
