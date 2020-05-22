@@ -118,5 +118,5 @@ fi
 
 # dotfiles set
 DOTFILES="${HOME}/dotfiles"
-
+export PATH=$PATH:$HOME/.nodebrew/current/bin
 source ${DOTFILES}/opt/bash/history_share.bash

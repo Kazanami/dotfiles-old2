@@ -1,4 +1,4 @@
-#set -x PATH $PATH 
+set -x PATH $PATH $HOME/.nodebrew/current/bin 
 
 function peco_sync_select_history
   history-merge
