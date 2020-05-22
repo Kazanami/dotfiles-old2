@@ -1,0 +1,15 @@
+name: Ubuntu (Container)
+
+on:
+  repository_dispatch:
+    types: ['init_test_on_ubuntu_vanilla', 'single_test_cont']
+
+jobs:
+  ubuntu-vanilla:
+    runs-on: ubuntu-latest
+    container: "ubuntu:latest"
+    if: github.event_name == 'repository_dispatch'
+    steps:
+      - name: "Run dotfiles Install"
+        run: |
+        wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash
