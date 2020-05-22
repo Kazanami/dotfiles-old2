@@ -40,6 +40,5 @@ jobs:
     container: ubuntu:latest
     steps:
       - name: Test Ubuntu container
-        working-directory: ./bin
         run: |
           curl -o - https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh | bash
