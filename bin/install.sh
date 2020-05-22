@@ -20,7 +20,7 @@ echo "Checking Package update...";
 sudo apt update > /dev/null 2>&1
 
 echo "Install the Required Packages..."
-sudo apt install git curl > /dev/null 2>&1
+sudo apt install -y git curl > /dev/null 2>&1
 
 if [[ $? == "0" ]];then
 	echo "Complited."
