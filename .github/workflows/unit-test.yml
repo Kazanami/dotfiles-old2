@@ -26,8 +26,14 @@ jobs:
    needs: "unit-test"
    steps:
      - name: Send trigger init test
-       run: |
-          curl -X POST -H "Authorization: token ${{secrets.GITHUB_TOKEN}}" \
-             -H "Content-Type: application/json" \
-             https://api.github.com/repos/Kazanami/dotfiles/dispatches \
-             --data '{"event_type":"run_init_test","client_payload":{"test":true}}'
+       uses: peter-evans/repository-dispatch@v1
+       with:
+         token: ${{ secrets.REPO_TOKEN }}
+         repository: Kazanami/dotfiles
+         event-type: run_init_test
+         client-payload: '{"ref": "${{ github.ref }}" , "sha": "${{ github.sha }}"}'
+       #run: |
+       #   curl -X POST -H "Authorization: token ${{secrets.REPO_TOKEN}}" \
+       #      -H "Content-Type: application/json" \
+       #      https://api.github.com/repos/Kazanami/dotfiles/dispatches \
+       #      --data '{"event_type":"run_init_test","client_payload":{"test":true}}'
