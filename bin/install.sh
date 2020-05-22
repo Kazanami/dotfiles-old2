@@ -1,5 +1,7 @@
 #!/bin/bash -eu
 #cat dotfiles_logo.txt
+
+# CentOS Setup
 DOTFILES_GITHUB="https://github.com/Kazanami/dotfiles.git"
 DOTFILES_PATH="${HOME}/dotfiles"
 dotfiles_logo='
