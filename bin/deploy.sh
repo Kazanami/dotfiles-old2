@@ -13,8 +13,7 @@ if [[ -f "~/.config/nvim/autoload/plug.vim" ]];then
 fi
 
 echo "Deploying fish config files..."
-mkdir -p ~/.config/fish
-ln -s ~/dotfiles/fish ~/.config/fish
+ln -s ~/dotfiles/fish ~/.config/
 
 echo "Deploying bash config file..."
 mv ~/.bashrc ~/.bashrc.bak

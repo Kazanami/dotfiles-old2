@@ -49,5 +49,8 @@ bash ./scripts/nodebrew.sh
 # Deploy
 bash ./deploy.sh
 
+# Doctor Nodebrew
+
+bash ./doctor.sh
 
 echo "Enjoy!"
