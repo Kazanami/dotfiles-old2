@@ -1,7 +1,8 @@
 name: "Ubuntu (no-container)"
 
 on:
-  deployment:
+  repository_dispatch:
+    types: [run_init_test]
 
 jobs:
   ubuntu-vanilla:
