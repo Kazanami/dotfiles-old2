@@ -43,8 +43,4 @@ jobs:
     steps:
       - name: init-test of Container (${{ matrix.cont_oses }})
         run: |
-        if type -t curl >> /dev/null 2>&1; then
-          curl -s -o - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash
-        else if type -t wget >> /dev/null 2>&1;then
-          wget -q -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash -x
-        fi
+          wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash -x
