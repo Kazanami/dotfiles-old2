@@ -5,6 +5,7 @@ on:
    paths:
     - '.github/workflows/unit-test.yml'
     - 'bin/**'
+   branches: [ 'developer' ]
   repository_dispatch:
     types: ['run-all-test']
 
@@ -57,6 +58,5 @@ jobs:
     steps:
       - name: init-test of Container (${{ matrix.cont_oses }})
         run: |
-          [[ `type apt` ]] && apt update && apt install -y wget sudo software-properties-common || yum update; yum install wget sudo 
+          [[ `type apt` ]] && apt update && apt install -y wget sudo software-properties-common || yum update; yum install wget sudo
           wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash -x
-      
