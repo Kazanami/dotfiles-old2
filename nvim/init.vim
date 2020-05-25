@@ -1,7 +1,9 @@
 if has("unix")
-	let plug_2_inst = "~/.config/nvim/plugins"
+	set runtimepath+=$HOME/dotfiles/vim/autoload/plug.vim
+	let plug_inst_path = "$HOME/.config/nvim/plugins"
 elseif has("win64")
-	let plug_2_inst = "~/AppData/Local/nvim/plugins"
+	set runtimepath+=$HOME/AppData/Local/nvim/autoload/plug.vim
+	let plug_inst_path = "$HOME/AppData/Local/nvim/plugins"
 endif
 
 call plug#begin(plug_2_inst)
