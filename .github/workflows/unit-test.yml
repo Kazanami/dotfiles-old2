@@ -41,6 +41,7 @@ jobs:
        #      --data '{"event_type":"run_init_test","client_payload":{"test":true}}'
   ubuntu-vanilla:
    runs-on: ubuntu-latest
+   if: ${{ success() }}
    needs: "unit-test"
    steps:
      - name: init-test of Ubuntu Vanilla
