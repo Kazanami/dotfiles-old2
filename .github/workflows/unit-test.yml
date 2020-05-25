@@ -39,14 +39,14 @@ jobs:
        #      -H "Content-Type: application/json" \
        #      https://api.github.com/repos/Kazanami/dotfiles/dispatches \
        #      --data '{"event_type":"run_init_test","client_payload":{"test":true}}'
-  init-test (Ubuntu Vanilla):
+  Ubuntu Vanilla:
    runs-on: ubuntu-latest
    needs: "unit-test"
    steps:
      - name: init-test of Ubuntu Vanilla
        run: |
          curl -o - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash
-  init-test (Container):
+  Containers:
     runs-on: ubuntu-latest
     needs: "unit-test"
     strategy:
