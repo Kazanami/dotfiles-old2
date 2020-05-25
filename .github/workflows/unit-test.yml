@@ -5,7 +5,8 @@ on:
    paths:
     - '.github/workflows/unit-test.yml'
     - 'bin/**'
-
+  repository_dispatch:
+    types: ['run-all-test']
 
 jobs:
   unit-test:
