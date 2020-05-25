@@ -15,7 +15,7 @@ jobs:
     strategy:
      fail-fast: false
      matrix:
-      script: ["./nvim.sh", "./fish.sh", "./nodebrew.sh"]
+      script: ["./nvim.sh", "./fish.sh", "./nodebrew.sh", "./trap.sh"]
 
     steps:
      - uses: actions/checkout@v2
