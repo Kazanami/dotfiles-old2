@@ -3,7 +3,7 @@ name: "All Test"
 on:
   push:
    paths:
-    - '.github/workflows/unit-test.yml'
+    - '.github/workflows/ci.yml'
     - 'bin/**'
   repository_dispatch:
     types: ['run-all-test']
