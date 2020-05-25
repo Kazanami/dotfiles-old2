@@ -15,5 +15,5 @@ jobs:
     steps:
       - name: curl or wget of Container (${{ matrix.cont_oses }})
         run: |
-          echo `type curl`
-          echo `type wget`
+          echo `command -v curl`
+          echo `command -v wget`
