@@ -1,0 +1,19 @@
+name: "Which Test"
+
+on:
+  push: [ "master" ]
+
+jobs:
+  containers:
+    runs-on: ubuntu-latest
+    needs: "curl or wget"
+    strategy:
+      fail-fast: false
+      matrix:
+        cont_oses: ["ubuntu:latest", "centos:latest", "alpine:latest"]
+    container: ${{ matrix.cont_oses }}
+    steps:
+      - name: curl or wget of Container (${{ matrix.cont_oses }})
+        run: |
+          which curl
+          which wget
