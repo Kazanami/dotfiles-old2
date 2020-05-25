@@ -17,6 +17,10 @@ Welcome
 '
 printf "$dotfiles_logo"
 
+OS=`cat /etc/os-release | grep '^ID=' | cut -d "=" -f 2`
+
+source ./oses/$OS.bash
+
 echo "Checking Package update...";
 sudo apt update > /dev/null 2>&1
 
