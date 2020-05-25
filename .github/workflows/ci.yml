@@ -38,15 +38,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        cont_oses: ["ubuntu:latest"]
+        cont_oses: ["ubuntu:latest", "centos:latest", "alpine:latest"]
     container: ${{ matrix.cont_oses }}
     steps:
       - name: init-test of Container (${{ matrix.cont_oses }})
         run: |
-          if type apt > /dev/null 2>&1;
-          then
-           apt update && apt install -y wget sudo software-properties-common
-          else
-           yum update; yum install wget sudo
-          fi
           wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash -x
