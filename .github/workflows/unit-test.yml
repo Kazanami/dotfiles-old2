@@ -1,4 +1,4 @@
-name: "Unit Test"
+name:                      "Unit Test"
 
 on:
   push:
@@ -6,57 +6,57 @@ on:
     - '.github/workflows/unit-test.yml'
     - 'bin/**'
   repository_dispatch:
-    types: ['run-all-test']
+    types:                 ['run-all-test']
 
 jobs:
   unit-test:
-    runs-on: ubuntu-latest
+    runs-on:               ubuntu-latest
 
     strategy:
-     fail-fast: false
+     fail-fast:            false
      matrix:
-      script: ["./nvim.sh", "./fish.sh", "./nodebrew.sh"]
+      script:              ["./nvim.sh", "./fish.sh", "./nodebrew.sh"]
 
     steps:
-     - uses: actions/checkout@v2
-     - name: unit-test of ${{matrix.script}}
-       working-directory: ./bin/scripts
-       run: bash -x ${{matrix.script}}
+     - uses:               actions/checkout@v2
+     - name:               unit-test of ${{matrix.script}}
+       working-directory:  ./bin/scripts
+       run:                bash -x ${{matrix.script}}
 
   #trigger-send:
-  # runs-on: ubuntu-latest
-  # needs: "unit-test"
+  # runs-on:               ubuntu-latest
+  # needs:                 "unit-test"
   # steps:
-  #   - name: Send trigger init test
-  #     uses: peter-evans/repository-dispatch@v1
+  #   - name:              Send trigger init test
+  #     uses:              peter-evans/repository-dispatch@v1
   #     with:
-  #       token: ${{ secrets.REPO_TOKEN }}
-  #       repository: Kazanami/dotfiles
-  #       event-type: init-test
+  #       token:           ${{ secrets.REPO_TOKEN }}
+  #       repository:      Kazanami/dotfiles
+  #       event-type:      init-test
   #       client-payload: '{"ref": "${{ github.ref }}" , "sha": "${{ github.sha }}"}'
-       #run: |
+       #run:               |
        #   curl -X POST -H "Authorization: token ${{secrets.REPO_TOKEN}}" \
        #      -H "Content-Type: application/json" \
        #      https://api.github.com/repos/Kazanami/dotfiles/dispatches \
        #      --data '{"event_type":"run_init_test","client_payload":{"test":true}}'
     init-test (Ubuntu Vanilla):
-      runs-on: ubuntu-latest
-      needs: "unit-test"
+      runs-on:             ubuntu-latest
+      needs:               "unit-test"
       steps:
-        - name: init-test of Ubuntu vanilla
-        - run: |
+        - name:            init-test of Ubuntu vanilla
+        - run:             |
             curl -o - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash
 
-    init-test (Container):
-      runs-on: ubuntu-latest
-      needs: "unit-test"
-      strategy:
-        fail-fast: false
-        matrix:
-          cont_oses: ["ubuntu:latest"]
-      container: ${{ matrix.cont_oses }}
-      steps:
-        name: init-test of Container (${{ matrix.cont_oses }})
-        run: |
-                 apt update && apt install -y wget sudo software-properties-common
-                 wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash -x
+  init-test(Container):
+     runs-on:              ubuntu-latest
+     needs:                "unit-test"
+     strategy:
+       fail-fast:          false
+       matrix:
+         cont_oses:        ["ubuntu:latest"]
+     container:            ${{ matrix.cont_oses }}
+     steps:
+       name:               init-test of Container (${{ matrix.cont_oses }})
+       run:                |
+            apt update && apt install -y wget sudo software-properties-common
+            wget -O - "https://raw.githubusercontent.com/Kazanami/dotfiles/master/bin/install.sh" | bash -x
